@@ -1,6 +1,6 @@
 input.onButtonPressed(Button.A, function () {
     music.playTone(262, music.beat(BeatFraction.Sixteenth))
-    spaltenwert += 0
+    spaltenwert = 0
     bearbeite_spalte += 1
     if (bearbeite_spalte > 4) {
         bearbeite_spalte = 0
@@ -17,10 +17,10 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.B, function () {
     music.playTone(523, music.beat(BeatFraction.Sixteenth))
-    spaltenwert = 0
-    bearbeite_spalte += 1
-    if (bearbeite_spalte > 4) {
-        bearbeite_spalte = 0
+    led.toggle(bearbeite_spalte, spaltenwert)
+    spaltenwert += 1
+    if (spaltenwert > 4) {
+        spaltenwert = 0
     }
     led.plot(bearbeite_spalte, spaltenwert)
 })
