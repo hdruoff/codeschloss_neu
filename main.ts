@@ -6,18 +6,18 @@ input.onButtonPressed(Button.A, function () {
         bearbeite_spalte = 0
     }
     for (let index = 0; index <= 4; index++) {
-        led.toggle(bearbeite_spalte, index)
-        for (let index2 = 0; index2 < 3; index2++) {
-            led.toggle(bearbeite_spalte, spaltenwert)
-            basic.pause(100)
-            led.plot(bearbeite_spalte, spaltenwert)
-            basic.pause(100)
-        }
+        led.unplot(bearbeite_spalte, index)
+    }
+    for (let index = 0; index < 3; index++) {
+        led.unplot(bearbeite_spalte, spaltenwert)
+        basic.pause(100)
+        led.plot(bearbeite_spalte, spaltenwert)
+        basic.pause(100)
     }
 })
 input.onButtonPressed(Button.B, function () {
     music.playTone(523, music.beat(BeatFraction.Sixteenth))
-    led.toggle(bearbeite_spalte, spaltenwert)
+    led.unplot(bearbeite_spalte, spaltenwert)
     spaltenwert += 1
     if (spaltenwert > 4) {
         spaltenwert = 0
