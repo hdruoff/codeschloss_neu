@@ -28,7 +28,7 @@ let loesung_der_spalte = 0
 let code_richtig = 0
 let bearbeite_spalte = 0
 let spaltenwert = 0
-let loesung = "12043"
+let loesung = "01234"
 led.plot(0, 0)
 basic.setLedColor(0xff0000)
 music.setTempo(200)
